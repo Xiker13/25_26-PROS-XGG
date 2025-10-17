@@ -29,7 +29,7 @@ public class Hilo extends Thread {
     }
 
     /**
-     * Método que se ejecuta al iniciar el hilo.
+     * Procedimiento que se ejecuta al iniciar el hilo.
      * Imprime el nombre seguido del contador de 1 a repeticiones.
      */
     @Override

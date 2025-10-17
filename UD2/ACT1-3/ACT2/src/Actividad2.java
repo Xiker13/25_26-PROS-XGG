@@ -28,7 +28,7 @@ public class Actividad2 {
         }
 
         /**
-         * Método que se ejecuta al iniciar el hilo.
+         * Procedimiento que se ejecuta al iniciar el hilo.
          * Imprime "Hilo id i" 20 veces.
          */
         @Override
@@ -40,7 +40,7 @@ public class Actividad2 {
     }
 
     /**
-     * Método principal que crea n hilos y los ejecuta.
+     * Procedimiento principal que crea n hilos y los ejecuta.
      * @param args El primer argumento debe ser el número de hilos a crear
      */
     public static void main(String[] args){

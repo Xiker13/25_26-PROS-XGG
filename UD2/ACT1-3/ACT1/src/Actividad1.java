@@ -9,7 +9,7 @@
  */
 public class Actividad1 {
     /**
-     * Método principal que crea y ejecuta los hilos.
+     * Procedimiento principal que crea y ejecuta los hilos.
      * @param args Argumentos de línea de comandos (no se usan)
      */
     public static void main(String[] args){

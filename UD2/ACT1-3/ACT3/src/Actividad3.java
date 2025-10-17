@@ -9,7 +9,7 @@
  */
 public class Actividad3 {
     /**
-     * Método principal que crea un hilo, muestra sus valores, los modifica y los vuelve a mostrar.
+     * Procedimiento principal que crea un hilo, muestra sus valores, los modifica y los vuelve a mostrar.
      * @param args Argumentos de línea de comandos (no se usan)
      */
     public static void main(String[] args){
