@@ -6,6 +6,8 @@ import java.net.http.HttpResponse;
 /**
  * Actividad 5: Realiza una conexión HTTP a www.vitoria-gasteiz.com
  * utilizando HttpClient y muestra información del response.
+ *
+ * @author Xiker
  */
 public class Actividad5 {
 
