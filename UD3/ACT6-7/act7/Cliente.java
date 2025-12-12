@@ -10,30 +10,35 @@ import java.net.Socket;
  *
  * Si el servidor ya ha atendido a 3 clientes, la conexión será rechazada.
  *
- * @author Xiker García de Albeniz
+ * Autor: Xiker García de Albeniz
  */
 public class Cliente {
 
-    /**
-     * Método principal del cliente.
-     * Se conecta al servidor y muestra el saludo recibido.
-     *
-     * @param args No se utilizan.
-     */
     public static void main(String[] args) {
         final String HOST = "localhost";
         final int PUERTO = 6013;
 
         System.out.println("PROGRAMA CLIENTE INICIANDO");
 
-        try (Socket socket = new Socket(HOST, PUERTO);
-             DataInputStream entrada = new DataInputStream(socket.getInputStream())) {
+        Socket socket = null;
+        DataInputStream entrada = null;
+
+        try {
+            socket = new Socket(HOST, PUERTO);
+            entrada = new DataInputStream(socket.getInputStream());
 
             String mensaje = entrada.readUTF();
             System.out.println("Recibiendo mensaje del servidor: \n\t" + mensaje);
 
         } catch (IOException e) {
             System.err.println("Connection refused: connect");
+        } finally {
+            try {
+                if (entrada != null) entrada.close();
+                if (socket != null) socket.close();
+            } catch (IOException ex) {
+                System.err.println("Error al cerrar recursos: " + ex.getMessage());
+            }
         }
     }
 }

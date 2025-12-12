@@ -37,7 +37,8 @@ No se han utilizado bibliotecas adicionales.
 
 ## ⚠️ Solución de problemas
 
-Crear todos los archivos en la misma carpeta ha dado fallos al crear las clases servdor y clente del 7
+Crear todos los archivos en la misma carpeta ha dado fallos al crear las clases servidor y cliente del 7
+La solucion a este problema ha sido crear una carpeta individual para cada actividad
 
 ---
 
