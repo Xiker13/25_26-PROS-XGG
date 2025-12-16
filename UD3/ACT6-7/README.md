@@ -1,13 +1,17 @@
-# 📌 IDENTIFICACIÓN DE LA ACTIVIDAD: UDn.ACTm
+# 📌 IDENTIFICACIÓN DE LA ACTIVIDAD: UD3.ACT6-7
 
 ---
 
 ## 📖 Descripción
-Describe brevemente (entre **50 y 100 caracteres**) qué hace el programa desarrollado.
-**No copies literalmente** el enunciado de la actividad.
+Actividad 6:
+Programa que implementa comunicación mediante sockets TCP entre un servidor y un cliente.
+El cliente envía un número entero y el servidor devuelve ese número elevado al cuadrado. Ambos programas muestran mensajes de estado, gestionan excepciones y cierran correctamente los streams y sockets.
 
-> ✏️ *Ejemplo:* "Programa que calcula el salario neto de un trabajador aplicando retenciones fiscales."
-
+Actividad 7:
+Programa con sockets TCP donde un servidor atiende 3 clientes.
+A cada cliente se le envía un mensaje personalizado de saludo.
+A partir del cuarto cliente, la conexión es rechazada.
+Todos los clientes visualizan mensajes de estado y el servidor muestra su proceso de espera y atención.
 ---
 
 ## 📂 Estructura
@@ -16,64 +20,67 @@ Describe brevemente (entre **50 y 100 caracteres**) qué hace el programa desarr
 Ubicación y descripción de los archivos principales del programa.
 
 ```plaintext
-📁 /src
-    ✅ <nombre_programa_fuente>.c/.java → Breve descripción funcional del archivo
-    ✅ <nombre_programa_fuente>.c/.java → Breve descripción funcional del archivo
+📁 UD3/ACT6-7/act6
+    ✅ Servidor.java → Servidor TCP que recibe un número y devuelve su cuadrado.
+    ✅ Cliente.java → Cliente TCP que envía un número y muestra la respuesta del servidor.
+
+📁 UD3/ACT6-7/act7
+    ✅ Servidor.java → Servidor TCP que atiende exactamente a 3 clientes enviando saludos.
+    ✅ Cliente.java → Cliente TCP que recibe y muestra el saludo del servidor.
+
 ```
 
 ### 2. Bibliotecas adicionales (si las hubiera)
-Archivos de librerías creados por ti o necesarios para la actividad.
-
-```plaintext
-📁 /libs
-    ✅ <nombre_biblioteca>.c/.java → Breve descripción de la biblioteca
-```
-
-> ✏️ *Si no usas bibliotecas externas, indícalo con la siguiente frase: "No se han utilizado bibliotecas adicionales."*
+No se han utilizado bibliotecas adicionales.
 
 ---
 
 ## ⚠️ Solución de problemas
 
-Describe cualquier problema encontrado durante la realización de la actividad y cómo lo solucionaste.
-
-```plaintext
-✅ Título del problema → Forma de resolverlo.
-✅ Título del problema → Forma de resolverlo.
-```
-
-> ✏️ *Si no has tenido problemas, indícalo con la siguiente frase: "No se han encontrado problemas en esta actividad."*
+Crear todos los archivos en la misma carpeta ha dado fallos al crear las clases servidor y cliente del 7
+La solucion a este problema ha sido crear una carpeta individual para cada actividad
 
 ---
 
 ## ⚙️ Requisitos de ejecución
 
-Indica qué necesitas para ejecutar el programa correctamente:
-
-```plaintext
-✅ Lenguaje: C/Java versión recomendada
-✅ IDE o compilador utilizado
-✅ Sistema operativo probado (opcional)
-✅ Dependencias externas (si las hubiera)
-```
+Lenguaje: Java 8 o superior
+IDE o compilador: IntelliJ / Eclipse / VSCode / javac
+Sistema operativo probado: Windows 7 64-bit
+Dependencias externas: Ninguna
 
 ---
 
 ## 🚀 Instalación y ejecución
 
-Describe los pasos para compilar y/o ejecutar el programa:
+Actividad6
+cd UD3/ACT6-7/act6
+javac Servidor.java
+javac Cliente.java
 
-```plaintext
-✅ Paso 1: Compilar el programa...
-✅ Paso 2: Ejecutar el programa...
-✅ Paso 3: Opciones de entrada/salida si las hubiera...
-```
+# En una terminal
+java Servidor
 
-> ✏️ *Utiliza comandos claros si se ejecuta desde terminal o IDE.*
+# En otra terminal
+java Cliente
 
----
+
+Actividad7
+cd UD3/ACT6-7/act7
+javac Servidor.java
+javac Cliente.java
+
+# En una terminal (servidor)
+java Servidor
+
+# En otras terminales (los clientes)
+java Cliente
+java Cliente
+java Cliente
+
+
 
 ## ✨ Autor/a
 
 ```plaintext
-👤 Nombre PrimerApellido
+👤 Xiker Garcia de Albeniz
