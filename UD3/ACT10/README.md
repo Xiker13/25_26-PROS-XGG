@@ -1,79 +1,69 @@
-# 📌 IDENTIFICACIÓN DE LA ACTIVIDAD: UDn.ACTm
+# 📌 IDENTIFICACIÓN DE LA ACTIVIDAD: UD3.ACT10
 
 ---
 
 ## 📖 Descripción
-Describe brevemente (entre **50 y 100 caracteres**) qué hace el programa desarrollado.
-**No copies literalmente** el enunciado de la actividad.
-
-> ✏️ *Ejemplo:* "Programa que calcula el salario neto de un trabajador aplicando retenciones fiscales."
+Programa cliente-servidor que intercambia un objeto serializado mediante UDP y lo modifica en el servidor.
 
 ---
 
 ## 📂 Estructura
 
 ### 1. Código fuente
-Ubicación y descripción de los archivos principales del programa.
 
-```plaintext
 📁 /src
-    ✅ <nombre_programa_fuente>.c/.java → Breve descripción funcional del archivo
-    ✅ <nombre_programa_fuente>.c/.java → Breve descripción funcional del archivo
-```
 
-### 2. Bibliotecas adicionales (si las hubiera)
-Archivos de librerías creados por ti o necesarios para la actividad.
+✅ Tenista.java  → Clase que define el objeto Tenista serializable con sus atributos y métodos.
 
-```plaintext
-📁 /libs
-    ✅ <nombre_biblioteca>.c/.java → Breve descripción de la biblioteca
-```
+✅ Cliente.java  → Programa cliente UDP que envía un objeto Tenista y recibe el objeto modificado.
 
-> ✏️ *Si no usas bibliotecas externas, indícalo con la siguiente frase: "No se han utilizado bibliotecas adicionales."*
+✅ Servidor.java → Programa servidor UDP que recibe, modifica y devuelve un objeto Tenista.
 
 ---
 
+### 2. Bibliotecas adicionales (si las hubiera)
+No se han utilizado bibliotecas adicionales.
+
+
 ## ⚠️ Solución de problemas
 
-Describe cualquier problema encontrado durante la realización de la actividad y cómo lo solucionaste.
+✅ Envío de objetos por UDP → Se solucionó implementando la interfaz Serializable en la clase Tenista y utilizando streams de objetos para convertir el objeto a bytes.
 
-```plaintext
-✅ Título del problema → Forma de resolverlo.
-✅ Título del problema → Forma de resolverlo.
-```
+✅ Tamaño del buffer del datagrama → Se estableció un buffer suficientemente grande (1024 bytes) para evitar pérdidas de datos durante la recepción.
 
-> ✏️ *Si no has tenido problemas, indícalo con la siguiente frase: "No se han encontrado problemas en esta actividad."*
+✅ Orden de ejecución cliente-servidor → Se resolvió iniciando siempre primero el servidor antes de ejecutar el cliente.
+
 
 ---
 
 ## ⚙️ Requisitos de ejecución
 
-Indica qué necesitas para ejecutar el programa correctamente:
+✅ Lenguaje: Java (JDK 8 o superior)
 
-```plaintext
-✅ Lenguaje: C/Java versión recomendada
-✅ IDE o compilador utilizado
-✅ Sistema operativo probado (opcional)
-✅ Dependencias externas (si las hubiera)
-```
+✅ IDE utilizado: IntelliJ IDEA / Eclipse / NetBeans
+
+✅ Sistema operativo probado: Windows
+
+✅ Dependencias externas: No se requieren
+
 
 ---
 
 ## 🚀 Instalación y ejecución
 
-Describe los pasos para compilar y/o ejecutar el programa:
+✅ Paso 1: Abrir el proyecto en el IDE o situarse en el directorio /src desde la terminal.
 
-```plaintext
-✅ Paso 1: Compilar el programa...
-✅ Paso 2: Ejecutar el programa...
-✅ Paso 3: Opciones de entrada/salida si las hubiera...
-```
+✅ Paso 2: Compilar las clases Java si es necesario.
 
-> ✏️ *Utiliza comandos claros si se ejecuta desde terminal o IDE.*
+✅ Paso 3: Ejecutar primero la clase Servidor.
 
+✅ Paso 4: Ejecutar a continuación la clase Cliente.
+
+El servidor debe estar en ejecución antes de lanzar el cliente para garantizar la correcta recepción del
+datagrama.
 ---
 
 ## ✨ Autor/a
 
 ```plaintext
-👤 Nombre PrimerApellido
+👤 Xiker Garcia De Albeniz
