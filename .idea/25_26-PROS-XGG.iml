@@ -4,8 +4,11 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/UD3/ACT10" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/UD4/ACT1" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="commons-io-2.21.0" level="project" />
+    <orderEntry type="library" name="commons-net-3.12.0" level="project" />
   </component>
 </module>

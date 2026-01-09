@@ -1,79 +1,54 @@
-# 📌 IDENTIFICACIÓN DE LA ACTIVIDAD: UDn.ACTm
+# 📌 IDENTIFICACIÓN DE LA ACTIVIDAD: UD4.ACT1
 
 ---
 
 ## 📖 Descripción
-Describe brevemente (entre **50 y 100 caracteres**) qué hace el programa desarrollado.
-**No copies literalmente** el enunciado de la actividad.
-
-> ✏️ *Ejemplo:* "Programa que calcula el salario neto de un trabajador aplicando retenciones fiscales."
+Programa cliente FTP en Java que conecta a ftp.rediris.es, muestra el directorio actual y crea DM2PROS si es posible.
 
 ---
 
 ## 📂 Estructura
 
 ### 1. Código fuente
-Ubicación y descripción de los archivos principales del programa.
-
-```plaintext
-📁 /src
-    ✅ <nombre_programa_fuente>.c/.java → Breve descripción funcional del archivo
-    ✅ <nombre_programa_fuente>.c/.java → Breve descripción funcional del archivo
-```
+📁 /src  
+    ✅ Actividad1.java → Clase principal que realiza la conexión FTP, el login, la creación del directorio DM2PROS, el logout y la desconexión.
 
 ### 2. Bibliotecas adicionales (si las hubiera)
-Archivos de librerías creados por ti o necesarios para la actividad.
-
-```plaintext
 📁 /libs
-    ✅ <nombre_biblioteca>.c/.java → Breve descripción de la biblioteca
-```
+    ✅ commons-net-3.12.0.jar → Librería Apache Commons Net que proporciona la clase FTPClient para gestionar la conexión y operaciones FTP.
+    ✅ commons-io-2.21.0.jar → Librería Apache Commons IO para utilidades de entrada/salida usadas en la gestión de flujos o tratamiento de datos.
 
-> ✏️ *Si no usas bibliotecas externas, indícalo con la siguiente frase: "No se han utilizado bibliotecas adicionales."*
 
 ---
 
 ## ⚠️ Solución de problemas
 
-Describe cualquier problema encontrado durante la realización de la actividad y cómo lo solucionaste.
-
-```plaintext
-✅ Título del problema → Forma de resolverlo.
-✅ Título del problema → Forma de resolverlo.
-```
-
-> ✏️ *Si no has tenido problemas, indícalo con la siguiente frase: "No se han encontrado problemas en esta actividad."*
+No se han encontrado problemas en esta actividad.
 
 ---
 
 ## ⚙️ Requisitos de ejecución
 
-Indica qué necesitas para ejecutar el programa correctamente:
-
-```plaintext
-✅ Lenguaje: C/Java versión recomendada
-✅ IDE o compilador utilizado
-✅ Sistema operativo probado (opcional)
-✅ Dependencias externas (si las hubiera)
-```
+✅ Lenguaje: Java 8 o superior
+✅ IDE o compilador utilizado: IntelliJ IDEA / Eclipse / NetBeans / javac
+✅ Sistema operativo probado: Windows 10/11
+✅ Dependencias externas: Conexión a Internet y acceso al servidor ftp.rediris.es
+✅ Bibliotecas: commons-net-3.12.0.jar y commons-io-2.21.0.jar añadidas al classpath
 
 ---
 
 ## 🚀 Instalación y ejecución
 
-Describe los pasos para compilar y/o ejecutar el programa:
-
-```plaintext
-✅ Paso 1: Compilar el programa...
-✅ Paso 2: Ejecutar el programa...
-✅ Paso 3: Opciones de entrada/salida si las hubiera...
-```
-
-> ✏️ *Utiliza comandos claros si se ejecuta desde terminal o IDE.*
-
----
+✅ Paso 1: Colocar commons-net-3.12.0.jar y commons-io-2.21.0.jar en la carpeta /libs o configurarlas como dependencias en el proyecto.
+✅ Paso 2: Compilar el programa con el IDE o, desde terminal:
+javac -cp.; libs/commons-net-3.12.0.jar; libs/commons-io-2.21.0.jar Actividad1.java (Windows)
+javac -cp.:libs/commons-net-3.12.0.jar:libs/commons-io-2.21.0.jar Actividad1.java (Linux/Mac)
+✅ Paso 3: Ejecutar el programa:
+java -cp.; libs/commons-net-3.12.0.jar; libs/commons-io-2.21.0.jar Actividad1 (Windows)
+java -cp.:libs/commons-net-3.12.0.jar:libs/commons-io-2.21.0.jar Actividad1 (Linux/Mac)
+✅ Paso 4: Observar en la consola los mensajes de conexión, login, directorio actual, creación de DM2PROS, logout y desconexión.
 
 ## ✨ Autor/a
 
 ```plaintext
-👤 Nombre PrimerApellido
+👤 Xiker Garcia de Albeniz
