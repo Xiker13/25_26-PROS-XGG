@@ -1,23 +1,56 @@
 import java.io.IOException;
-import java.io.StringWriter;
 
 import org.apache.commons.net.ftp.FTPClient;
-import org.apache.commons.io.IOUtils;
 
+/**
+ * Clase principal que realiza una conexión FTP al servidor público de RedIRIS,
+ * crea un directorio y finaliza la sesión mostrando los mensajes requeridos.
+ *
+ * @author Xiker
+ * @version 1.0
+ * @since 2026
+ */
 public class Actividad1 {
 
+    /**
+     * Método principal que ejecuta el programa.
+     *
+     * @param args argumentos de línea de comandos (no utilizados)
+     */
     public static void main(String[] args) {
+
+        /**
+         * Cliente FTP utilizado para realizar la conexión y las operaciones
+         * sobre el servidor.
+         */
         FTPClient ftpClient = new FTPClient();
+
+        /**
+         * Nombre del servidor FTP al que se va a conectar el programa.
+         */
         String servidor = "ftp.rediris.es";
+
+        /**
+         * Usuario para acceder al servidor FTP.
+         */
         String usuario = "anonymous";
+
+        /**
+         * Contraseña para acceder al servidor FTP.
+         */
         String password = "dm2";
 
-        System.out.println("Nos conectamos a ftp.rediris.es");
+        System.out.println("Nos conectamos a " + servidor);
 
         try {
-            // Conexión al servidor FTP (puerto 21 por defecto)
-            ftpClient.connect(servidor, 21);
+            /**
+             * Establece la conexión con el servidor FTP.
+             */
+            ftpClient.connect(servidor);
 
+            /**
+             * Realiza el login en el servidor FTP con las credenciales indicadas.
+             */
             boolean loginOk = ftpClient.login(usuario, password);
 
             if (!loginOk) {
@@ -31,14 +64,15 @@ public class Actividad1 {
 
             System.out.println("Login correcto");
 
-            // Directorio actual tras el login
+            /**
+             * Obtiene y muestra el directorio de trabajo actual tras el login.
+             */
             String directorioActual = ftpClient.printWorkingDirectory();
-            if (directorioActual == null) {
-                directorioActual = "/";
-            }
             System.out.println("Directorio actual:" + directorioActual);
 
-            // Crear el directorio DM2PROS
+            /**
+             * Intenta crear el directorio DM2PROS en el servidor FTP.
+             */
             boolean creado = ftpClient.makeDirectory("DM2PROS");
             if (creado) {
                 System.out.println("Directorio creado....");
@@ -46,7 +80,9 @@ public class Actividad1 {
                 System.out.println("NO SE HA PODIDO CREAR EL DIRECTORIO");
             }
 
-            // Logout del servidor
+            /**
+             * Realiza el logout del servidor FTP.
+             */
             boolean logoutOk = ftpClient.logout();
             if (logoutOk) {
                 System.out.println("Logout del servidor FTP...");
@@ -54,20 +90,19 @@ public class Actividad1 {
                 System.out.println("Error al hacer logout...");
             }
 
-            // Desconexión final
+            /**
+             * Desconecta el cliente FTP del servidor.
+             */
             ftpClient.disconnect();
             System.out.println("Desconectado...");
 
         } catch (IOException e) {
-            // Ejemplo de uso de commons-io: convertir el stacktrace a texto
-            StringWriter sw = new StringWriter();
-            e.printStackTrace(new java.io.PrintWriter(sw));
-            String stackTraceComoTexto = sw.toString();
-            // Aquí podrías guardar o mostrar el texto si quisieras
-            // Por ejemplo, solo mostrar un mensaje resumido:
+            /**
+             * Gestiona posibles errores de entrada/salida producidos durante
+             * la conexión o las operaciones FTP.
+             */
             System.err.println("Se ha producido un error de E/S en la conexión FTP.");
 
-            // Cierre seguro de la conexión
             try {
                 if (ftpClient.isConnected()) {
                     ftpClient.disconnect();
