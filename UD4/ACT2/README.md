@@ -1,12 +1,9 @@
-# 📌 IDENTIFICACIÓN DE LA ACTIVIDAD: UDn.ACTm
+# 📌 IDENTIFICACIÓN DE LA ACTIVIDAD: UD4.ACT2
 
 ---
 
 ## 📖 Descripción
-Describe brevemente (entre **50 y 100 caracteres**) qué hace el programa desarrollado.
-**No copies literalmente** el enunciado de la actividad.
-
-> ✏️ *Ejemplo:* "Programa que calcula el salario neto de un trabajador aplicando retenciones fiscales."
+Programa en Java que se conecta a un servidor FTP y crea una estructura de directorios personalizada con subcarpetas html, imagenes y css.
 
 ---
 
@@ -17,17 +14,16 @@ Ubicación y descripción de los archivos principales del programa.
 
 ```plaintext
 📁 /src
-    ✅ <nombre_programa_fuente>.c/.java → Breve descripción funcional del archivo
-    ✅ <nombre_programa_fuente>.c/.java → Breve descripción funcional del archivo
+    ✅ Actividad2.java → Clase principal que gestiona la conexión FTP, login, creación de directorios y cierre de sesión.
 ```
 
 ### 2. Bibliotecas adicionales (si las hubiera)
 Archivos de librerías creados por ti o necesarios para la actividad.
 
-```plaintext
 📁 /libs
-    ✅ <nombre_biblioteca>.c/.java → Breve descripción de la biblioteca
-```
+No se han utilizado bibliotecas adicionales.
+
+Se utiliza la librería Apache Commons Net para gestionar la conexión FTP, incluida como dependencia de Maven.
 
 > ✏️ *Si no usas bibliotecas externas, indícalo con la siguiente frase: "No se han utilizado bibliotecas adicionales."*
 
@@ -35,45 +31,38 @@ Archivos de librerías creados por ti o necesarios para la actividad.
 
 ## ⚠️ Solución de problemas
 
-Describe cualquier problema encontrado durante la realización de la actividad y cómo lo solucionaste.
-
-```plaintext
-✅ Título del problema → Forma de resolverlo.
-✅ Título del problema → Forma de resolverlo.
-```
-
-> ✏️ *Si no has tenido problemas, indícalo con la siguiente frase: "No se han encontrado problemas en esta actividad."*
+✅ Problema con la conexión FTP desde Docker → Se resolvió mapeando correctamente el puerto del contenedor y usando 127.0.0.1 como host.
+✅ Error al crear directorios → Se solucionó verificando los permisos del usuario dinux dentro del contenedor.
 
 ---
 
 ## ⚙️ Requisitos de ejecución
 
-Indica qué necesitas para ejecutar el programa correctamente:
 
 ```plaintext
-✅ Lenguaje: C/Java versión recomendada
-✅ IDE o compilador utilizado
-✅ Sistema operativo probado (opcional)
-✅ Dependencias externas (si las hubiera)
+✅ Lenguaje: Java 11 o superior
+✅ IDE o compilador: IntelliJ IDEA, Eclipse, NetBeans o terminal con javac
+✅ Sistema operativo probado: Windows, Linux
+✅ Dependencias externas: Apache Commons Net (Maven: commons-net 3.9.0)
 ```
 
 ---
 
 ## 🚀 Instalación y ejecución
 
-Describe los pasos para compilar y/o ejecutar el programa:
-
 ```plaintext
-✅ Paso 1: Compilar el programa...
-✅ Paso 2: Ejecutar el programa...
-✅ Paso 3: Opciones de entrada/salida si las hubiera...
-```
+✅ Paso 1: Descargar el proyecto y añadir la dependencia Apache Commons Net si no está incluida.
+✅ Paso 2: Abrir el proyecto en un IDE o compilar desde terminal:
+        javac -cp .;commons-net-3.9.0.jar Actividad2.java
+✅ Paso 3: Ejecutar el programa:
+        java -cp .;commons-net-3.9.0.jar Actividad2
+✅ Paso 4: Verificar la creación de los directorios en el servidor FTP (por ejemplo, usando FileZilla con usuario: dinux y contraseña: 1234).
 
-> ✏️ *Utiliza comandos claros si se ejecuta desde terminal o IDE.*
+```
 
 ---
 
 ## ✨ Autor/a
 
 ```plaintext
-👤 Nombre PrimerApellido
+👤 Xiker Garcia de Albeniz
