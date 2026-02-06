@@ -1,45 +1,70 @@
+/**
+ * UD1 – PROGRAMACIÓN MULTIPROCESO
+ * Actividad 9
+ * 
+ * Enunciado:
+ * Modificar los programas C de nombre actividad9fifocrealee.c y actividad9fifoescribe.c, 
+ * para que cuando se ejecute el programa actividad9fifoescribe, envíe al programa 
+ * actividad9fifocrealee un mensaje para que éste lo visualice. 
+ * El programa actividad9fifoescribe será el encargado de crear el fifo.
+ * 
+ * Resultado esperado:
+ * $./actividad9fifocrea
+ * Obteniendo información…Un saludo....
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include <sys/stat.h>
-#include <errno.h>
-#include <string.h>
 
-int main(void) {
-    int fp;
-    char buffer[1024];
-    ssize_t bytes;
+int main (void)
+{
+	int fp;
+	int bytesleidos;
+	char buffer[10];
+	
+	// Este programa no crea el FIFO, lo crea el escritor.
+    // Solo entramos en el bucle infinito para leer mensajes.
 
-    // Crear FIFO si no existe
-    if (access("FIFO2", F_OK) == -1) {
-        if (mkfifo("FIFO2", 0666) == -1) {
-            perror("Error al crear FIFO");
-            exit(1);
+	while (1) {
+		fp = open ("FIFO2", O_RDONLY);
+        if (fp == -1) {
+            // Si el FIFO no existe, esperamos un poco
+            usleep(500000);
+            continue;
         }
+
+		printf("Obteniendo información..."); 
+		while ((bytesleidos = read(fp, buffer, 1)) > 0) {
+            buffer[bytesleidos] = '\0';
+			printf("%s", buffer);
+		}
+	    close (fp);
     }
-
-    // Abrir FIFO en modo lectura no bloqueante
-    fp = open("FIFO2", O_RDONLY | O_NONBLOCK);
-    if (fp == -1) {
-        perror("Error al abrir FIFO");
-        exit(1);
-    }
-
-    printf("Lector iniciado, esperando mensajes...\n");
-
-    while (1) {
-        bytes = read(fp, buffer, sizeof(buffer)-1);
-        if (bytes > 0) {
-            buffer[bytes] = '\0';
-            printf("Obteniendo información...%s", buffer);
-        } else if (bytes == -1 && errno != EAGAIN) {
-            perror("Error leyendo FIFO");
-        }
-        // Evitar consumir CPU sin pausa
-        usleep(100000); // 0.1 segundos
-    }
-
-    close(fp);
-    return 0;
+    return(0);
 }
+
+/* 
+ * NOTA: Si quisieras que el proceso terminara justo después de recibir 
+ * el primer mensaje (en lugar de estar en un bucle infinito), 
+ * el código sería así:
+ * 
+ * int main(void) {
+ *     int fp, bytesleidos;
+ *     char buffer[10];
+ *
+ *     fp = open("FIFO2", O_RDONLY);
+ *     if (fp != -1) {
+ *         printf("Obteniendo información..."); 
+ *         while ((bytesleidos = read(fp, buffer, 1)) > 0) {
+ *             buffer[bytesleidos] = '\0';
+ *             printf("%s", buffer);
+ *         }
+ *         close(fp);
+ *     }
+ *     return 0;
+ * }
+ */

@@ -1,0 +1,12 @@
+# Archivos especiales de comunicación (Pipes)
+FIFO2
+
+# Ejecutables (Binarios)
+actividad8
+actividad9fifocrea
+actividad9fifoescribe
+
+# Archivos de depuración y temporales
+*.o
+*.out
+.DS_Store

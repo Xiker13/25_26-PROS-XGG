@@ -1,0 +1,27 @@
+{
+  "name": "Ubuntu - Desarrollo en C",
+  // Nombre del contenedor como aparecerá en VS Code.
+  
+  "build": {
+      "dockerfile": "../Dockerfile"
+  },
+  // Indica qué archivo Dockerfile usar para construir el contenedor.
+  
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      },
+      "extensions": []
+    }
+  },
+    // Usa Bash como terminal por defecto.
+    
+  "mounts": [
+      "source=${localWorkspaceFolder},target=/workspace,type=bind"
+  ],
+  // Monta la carpeta del proyecto en la ruta /workspace del contenedor.
+  
+  "remoteUser": "root"
+  // Ejecuta todo como usuario root dentro del contenedor.
+}
