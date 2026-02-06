@@ -1,12 +1,11 @@
-# 📌 IDENTIFICACIÓN DE LA ACTIVIDAD: UDn.ACTm
+# 📌 IDENTIFICACIÓN DE LA ACTIVIDAD: UD1.ACTm
 
 ---
 
-## 📖 Descripción
-Describe brevemente (entre **50 y 100 caracteres**) qué hace el programa desarrollado.
-**No copies literalmente** el enunciado de la actividad.
-
-> ✏️ *Ejemplo:* "Programa que calcula el salario neto de un trabajador aplicando retenciones fiscales."
+## 📖 Estructura
+📁 /src
+✅ Actividad10.java → Clase principal que gestiona la ejecución de los hilos y muestra sus prioridades.
+✅ Hilo.java → Clase que hereda de Thread y ejecuta las frases "Ejecutando…" con el mensaje recibido.
 
 ---
 
